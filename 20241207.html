@@ -8,12 +8,19 @@
 <body>
     <script>
         // var let const
-        var num2 = 1;
-        let num = 1;
-        let name = prompt('이름을 입력하세요.');
-        let address = prompt('주소를 입력하세요.');
-        let country = prompt('국적를 입력하세요.');
-        alert(`${name}님, ${address}에 사시네요! 당신은 ${country}인 입니다.`);
+        // let person = [
+        // prompt('이름을 입력'),
+        // prompt('나이를 입력'),
+        // prompt('거주지를 입력')
+        // ];
+
+        let person2 = {
+            name : prompt("이름"),
+            age : prompt("나이"),
+            place : prompt("거주지"),
+        } 
+
+        alert(person2.name, person2.age, person2.place)
     </script>
 </body>
 </html>
