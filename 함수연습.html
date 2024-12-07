@@ -7,17 +7,19 @@
 </head>
 <body>
     <script>
-        function color(value){
-            console.log(`당신이 좋아하는 색은 ${value}입니다.`);
+        
+        let 이름= prompt("이름");
+        let 생년월일 = prompt("생년월일");
+        let 나이 = prompt("나이");
+
+        function name(이름, 생년, 나이){
+            console.log(`이름 : ${이름}, 생년월일 : ${생년}, 나이 : ${나이}`);
         }
 
-        color('red');
-
-        color('blue');
-        color('yellow');
-        color('green');
-        color('purple');
-        color('pink');
+        name('둘리', 2010, '15살');
+        name('도우너', 2011, '14살');
+        name('또치', 2009, '16살');
+        name('오우찬', 2010, '15살');
 
     </script>
 </body>
