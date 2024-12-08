@@ -7,14 +7,10 @@
 </head>
 <body>
     <script>
-        let num1 = Number(prompt('첫번쨰 숫자를 입력하세요 : '));
-        let num2 = Number(prompt('두번쨰 숫자를 입력하세요 : '));
+        let num1 = parseInt(prompt("첫번쨰 수"));
+        let num2 = parseInt(prompt("두번째 수"));
 
-        function calc(첫수, 두수){
-            console.log(`${num1} + ${num2}의 값은 : ${num1+num2}입니다.`);
-        }
-
-        calc(num1, num2);
+        console.log(num1 + num2);
 
     </script>
 </body>
