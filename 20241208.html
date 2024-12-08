@@ -7,15 +7,15 @@
 </head>
 <body>
     <script>
-        let food = prompt("당신이 좋아하는 음식을 입력하시오.");
-        let drink = prompt("당신이 좋아하는 음료을 입력하시오.");
+        let num1 = Number(prompt('첫번쨰 숫자를 입력하세요 : '));
+        let num2 = Number(prompt('두번쨰 숫자를 입력하세요 : '));
 
-        function msg(음식, 음료){
-            console.log(`당신이 선택한 음식은 ${음식}이고, 음료는 ${음료}입니다.`);
+        function calc(첫수, 두수){
+            console.log(`${num1} + ${num2}의 값은 : ${num1+num2}입니다.`);
         }
 
-        msg("피자", "콜라");
-        msg(food, drink);
+        calc(num1, num2);
+
     </script>
 </body>
 </html>
