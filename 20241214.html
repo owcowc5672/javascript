@@ -7,15 +7,13 @@
 </head>
 <body>
     <script>
-        let ary = [1,2,3,4,5];
+        let age = prompt("나이를 입력하세요.");
 
-        ary.forEach(function(e){
-            if(e > 3){
-                console.log(e);
-            } else{
-                console.log(`3보다 작거나 같은 숫자 ${e}`);
-            }
-        });
+        if(age < 19) {
+            alert("미성년자");
+        }else {
+            alert("성인");
+        }
     </script>
 </body>
 </html>
