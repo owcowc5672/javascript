@@ -7,13 +7,14 @@
 </head>
 <body>
     <script>
-        let age = prompt("나이를 입력하세요.");
-
-        if(age < 19) {
-            alert("미성년자");
-        }else {
-            alert("성인");
+        function age(e){
+            if(e < 19) {
+                alert("미성년자");
+            }else {
+                alert("성인");
+            } 
         }
+        age(10)
     </script>
 </body>
 </html>
