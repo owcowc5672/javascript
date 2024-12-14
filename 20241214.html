@@ -8,13 +8,16 @@
 <body>
     <script>
         let e = prompt("나이입력");
+        let i = 15
         
         function age(e){
-            if(e < 18) {
-                alert("미성년자");
-            }else {
+            if(e == i) {
+                alert("반갑습니다.");
+            }else if (e > 18) {
                 alert("성인");
-            } 
+            }else{
+                alert("미성년자");
+            }
         }
 
         age(e);
