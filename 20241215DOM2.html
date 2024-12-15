@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20241215DOM2.html</title>
+</head>
+<body>
+    <button>커져라!</button>
+    <h1>커집니다!</h1>
+    <script>
+        let btn = document.querySelector("button");
+        let h1 = document.querySelector("h1");
+        let fz = 10;
+        
+        btn.addEventListener("click", function(){
+            h1.style.fontSize = `${fz}px`;
+            fz = fz + 10;
+        });
+    </script>
+</body>
+</html>
