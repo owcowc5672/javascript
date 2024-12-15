@@ -11,13 +11,23 @@
     <h1 class="h1">타이틀 입니다3</h1>
     <h1 class="h1">타이틀 입니다4</h1>
     <h1>타이틀 입니다5</h1>
-    <button>왼쪽</button>
-    <button>오른쪽</button>
+    <button id = "lb">왼쪽</button>
+    <button id = "rb">오른쪽</button>
+    <button id = "db">위쪽</button>
+    <button id = "ub">아래쪽</button>
     <script>
       let btn = document.querySelectorAll("button");
-      console.log(btn);
-      btn[0].addEventListener("click", function(){
-        alert("왼쪽!");
+      
+      btn.forEach(function(dom, index){
+        console.log(index);
+        dom.addEventListener("click", function(){
+          switch(index) {
+            case 0 : alert("왼쪽"); break;
+            case 1 : alert("오른쪽"); break;
+            case 2 : alert("위쪽"); break;
+            case 3 : alert("아래쪽"); break;
+          }
+        });
       });
     </script>
   </body>
