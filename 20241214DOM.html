@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20241214DOM.html</title>
+  </head>
+  <body>
+    <h1 id="h1">타이틀 입니다1</h1>
+    <h1 class="h1">타이틀 입니다2</h1>
+    <h1 class="h1">타이틀 입니다3</h1>
+    <h1 class="h1">타이틀 입니다4</h1>
+    <h1>타이틀 입니다5</h1>
+    <button>왼쪽</button>
+    <button>오른쪽</button>
+    <script>
+      let btn = document.querySelectorAll("button");
+      console.log(btn);
+      btn[0].addEventListener("click", function(){
+        alert("왼쪽!");
+      });
+    </script>
+  </body>
+</html>
