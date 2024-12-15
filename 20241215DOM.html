@@ -9,17 +9,22 @@
     <button data-value="빨강">red</button>
     <button data-value="노랑">yellow</button>
     <button data-value="초록">green</button>
+    <h1>입력된 컬러는<span>OO</span>색 입니다.</h1>
 
     <script>
-        let btn = document.querySelectorAll("button");
+        let color = document.querySelectorAll("button");
+        let word = document.querySelectorAll("h1 span");
+        let h1 = document.querySelector("h1");
 
-        btn.forEach(function(dom, index){
+        h1.style.color = "red";
 
-        dom.addEventListener("click", function(){
-          alert(`한국말로 ${dom.getAttribute("data-value")}입니다.`);
+        color.forEach(function(dom){
+            dom.addEventListener("click", function(){
+                alert(`한국말로 ${dom.getAttribute("data-value")}입니다.`);
+                word[0].innerText = dom.getAttribute("data-value");
+                h1.style.color = dom.innerText;
+            });
         });
-
-      });
     </script>
 </body>
 </html>
