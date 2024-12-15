@@ -11,16 +11,17 @@
     <h1 class="h1">타이틀 입니다3</h1>
     <h1 class="h1">타이틀 입니다4</h1>
     <h1>타이틀 입니다5</h1>
-    <button id = "lb">동쪽</button>
-    <button id = "rb">서쪽</button>
-    <button id = "db">남쪽</button>
-    <button id = "ub">북쪽</button>
+    <button data-value="동쪽" = "lb">왼쪽</button>
+    <button data-value="서쪽" = "lb">오른쪽</button>
+    <button data-value="남쪽" = "lb">북쪽</button>
+    <button data-value="북쪽" = "lb">남쪽</button>
     <script>
       let btn = document.querySelectorAll("button");
       
       btn.forEach(function(dom, index){
 
         dom.addEventListener("click", function(){
+          console.log(dom.getAttribute("data-value"));
           alert(`${dom.innerText} 버튼입니다.`);
         });
 
