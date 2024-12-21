@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ui>
+        <li>아름 : <span></span></li>
+        <li>사는곳 : <span></span></li>
+        <li>학년 : <span></span></li>
+    </ui>
+    <script>
+        let name = prompt("이름을 입력");
+        let live = prompt("사는곳을 입력");
+        let grade = prompt("학년을 입력");
+
+        let word = document.querySelectorAll("li span");
+        word[0].innerText = name;
+        word[1].innerText = live;
+        word[2].innerText = grade;
+
+    </script>
+</body>
+</html>
