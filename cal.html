@@ -104,25 +104,26 @@
                     input.value += now;
                     input.value = input.value*1;
                 }else{
-                    sum = preNum;
-                    preNum = input.value;
+                    preNum = input.value * 1;
                     preOpt = opt;
                     opt = now;
 
                     switch (preOpt) {
                         case "+" :
-                            console.log(preNum + sum);
+                            sum += preNum
                             break;
                         case "-" :
-                            console.log(preNum - sum);
+                            sum -= preNum
                             break;
                         case "*" :
-                            console.log(preNum * sum);
+                            sum *= preNum
                             break;
                         case "/" :
-                            console.log(preNum / sum);
+                            sum /= preNum
                             break;
                     }
+
+                    console.log(sum);
 
                     input.value = 0;
                 }
