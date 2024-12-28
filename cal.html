@@ -121,6 +121,11 @@
                         case "/" :
                             sum /= preNum
                             break;
+                        case "clear" :
+                            sum = 0;
+                            preNum = 0;
+                            input.value = 0;
+                            break
                     }
 
                     console.log(sum);
