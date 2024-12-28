@@ -98,6 +98,9 @@
                 let now = e.innerText;
                 if (isNaN(now) == false){
                     input.value += now;
+                    input.value = input.value*1;
+                }else{
+                    input.value = 0;
                 }
             })
         })
