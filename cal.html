@@ -1,140 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>calc.html</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        .calculator {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .display {
-            width: 100%;
-            height: 50px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-align: right;
-            font-size: 1.5rem;
-            padding: 5px 10px;
-            box-sizing: border-box;
-        }
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-        .buttons button {
-            height: 50px;
-            border: none;
-            border-radius: 5px;
-            background: #007bff;
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .buttons button:hover {
-            background: #0056b3;
-        }
-        .buttons .operator {
-            background: #28a745;
-        }
-        .buttons .operator:hover {
-            background: #1e7e34;
-        }
-        .buttons .clear{
-            background-color: #f00;
-        }
-        .buttons .clear:hover{
-            background-color: rgb(170, 1, 1);
-        }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
+      .calculator {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      .display {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: right;
+        font-size: 1.5rem;
+        padding: 5px 10px;
+        box-sizing: border-box;
+      }
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .buttons button {
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        background: #007bff;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .buttons button:hover {
+        background: #0056b3;
+      }
+      .buttons .operator {
+        background: #28a745;
+      }
+      .buttons .operator:hover {
+        background: #1e7e34;
+      }
+      .buttons .clear {
+        background-color: #f00;
+      }
+      .buttons .clear:hover {
+        background-color: rgb(170, 1, 1);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="calculator">
-        <input type="text" class="display" disabled value="0">
-        <div class="buttons">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator clear">clear</button>
-            
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator">*</button>
-            
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operator">/</button>
-            
-            <button>0</button>
-            <button class="operator">+</button>
-            <button class="operator">-</button>
-            <button class="operator">=</button>
-        </div>
+      <input type="text" class="display" disabled value="0" />
+      <div class="buttons">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator clear">clear</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator">*</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator">/</button>
+
+        <button>0</button>
+        <button class="operator">+</button>
+        <button class="operator">-</button>
+        <button class="operator">=</button>
+      </div>
     </div>
+
     <script>
-        let num = document.querySelectorAll("button");
-        let input = document.querySelector("input");
-        preNum = 0;
-        preOpt = false;
-        opt = false;
-        sum = 0;
+      let num = document.querySelectorAll("button");
+      let inp = document.querySelector("input"); // =dom
+      let prevNum = 0;
+      let opt = false;
+      let prevOpt = false;
+      let sum = 0;
+      let crn = 0;
 
-        num.forEach(function(e){
-            e.addEventListener('click', function(){
-                let now = e.innerText;
-                if (isNaN(now) == false){
-                    input.value += now;
-                    input.value = input.value*1;
-                }else{
-                    preNum = input.value * 1;
-                    preOpt = opt;
-                    opt = now;
-
-                    switch (preOpt) {
-                        case "+" :
-                            sum += preNum
-                            break;
-                        case "-" :
-                            sum -= preNum
-                            break;
-                        case "*" :
-                            sum *= preNum
-                            break;
-                        case "/" :
-                            sum /= preNum
-                            break;
-                        case "clear" :
-                            sum = 0;
-                            preNum = 0;
-                            input.value = 0;
-                            break
-                    }
-
-                    console.log(sum);
-
-                    input.value = 0;
-                }
-            })
-        })
+      num.forEach(function (e) {
+        e.addEventListener("click", function () {
+          let now = e.innerText;
+          // 1. 각 요소를 클릭했을때 안에있는 내용을 alert로 내보내보세요!
+          if (!isNaN(now)) {
+            crn += now;
+            inp.value = crn * 1;
+          } else {
+            prevNum = crn * 1;
+            prevOpt = opt;
+            opt = now;
+            if (prevOpt) {
+              switch (prevOpt) {
+                case "+":
+                  sum += prevNum;
+                  break;
+                case "-":
+                  sum -= prevNum;
+                  break;
+                case "*":
+                  sum *= prevNum;
+                  break;
+                case "/":
+                  sum /= prevNum;
+                  break;
+                case "clear" :
+                    sum = 0;
+                    inp.value = 0;
+                    crn = 0;
+                default:
+                  "";
+              }
+            } else {
+              sum = prevNum * 1;
+            }
+            crn = 0;
+            inp.value = sum;
+          }
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
-​
