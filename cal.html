@@ -92,6 +92,10 @@
     <script>
         let num = document.querySelectorAll("button");
         let input = document.querySelector("input");
+        preNum = 0;
+        preOpt = false;
+        opt = false;
+        sum = 0;
 
         num.forEach(function(e){
             e.addEventListener('click', function(){
@@ -100,6 +104,26 @@
                     input.value += now;
                     input.value = input.value*1;
                 }else{
+                    sum = preNum;
+                    preNum = input.value;
+                    preOpt = opt;
+                    opt = now;
+
+                    switch (preOpt) {
+                        case "+" :
+                            console.log(preNum + sum);
+                            break;
+                        case "-" :
+                            console.log(preNum - sum);
+                            break;
+                        case "*" :
+                            console.log(preNum * sum);
+                            break;
+                        case "/" :
+                            console.log(preNum / sum);
+                            break;
+                    }
+
                     input.value = 0;
                 }
             })
