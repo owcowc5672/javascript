@@ -87,6 +87,7 @@
         <div class="post-title">샘플 게시글 제목</div>
         <div class="post-content">이곳은 샘플 게시글 내용입니다. 필요한 내용을 여기에 작성하세요.</div>
         <div class="post-meta">작성일: 2024-12-26</div>
+        <button>삭제</button>
       </div>
     </div>
     <script>
@@ -98,28 +99,31 @@
             '오늘은 일요일'
         ];
         const note = [
-            '컴퓨터 수리법',
-            '오늘의 운세',
-            '공기 청정기 필터 교체',
-            '신규 게임 소개',
-            '치팅데이의 장점'
-        ]
-        title.forEach(function(e){
-            console.log(e);
-        })
+            '1월 부터 시작',
+            '잔치국수',
+            '장소 : 독립문역 앞',
+            '마지막 날',
+            '같이 놀 사람람'
+        ];
 
-        const cnt = document.querySelector(".board_container");
-        const post = document.querySelector(".post");
+        const cnt = document.querySelector(".board-container");
+        const postTemplate = document.querySelector(".post");
+        postTemplate.remove();
 
-        console.log(cnt, post);
+        title.forEach(function(e, i) {
+            let ps = postTemplate.cloneNode(true);
+            const ttl = ps.querySelector(".post-title");
+            const det = ps.querySelector(".post-content");
+            const btn = ps.querySelector("button");
 
-        title.forEach(function(e){
-            let ps = post.cloneNode(true);
-            console.log(ps);
+            ttl.innerText = e;
+            det.innerText = note[i];
+            btn.addEventListener('click', function(){
+                console.log(this);
+            })
+
             cnt.append(ps);
         });
-
     </script>
   </body>
 </html>
-​
