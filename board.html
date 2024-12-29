@@ -119,7 +119,7 @@
             ttl.innerText = e;
             det.innerText = note[i];
             btn.addEventListener('click', function(){
-                console.log(this);
+                this.parentElement.remove();
             })
 
             cnt.append(ps);
